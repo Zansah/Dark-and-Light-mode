@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Switcher</title>
+    <script src="https://kit.fontawesome.com/f4efa66e1d.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        #switch {
+            font-size: 50px;
+            color: black;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <i id="switch" class="fa-solid fa-toggle-off"></i>
+
+    <script>
+        const switchButton = document.getElementById('switch');
+        let isBlack = false;
+
+        switchButton.addEventListener('click', () => {
+            isBlack = !isBlack;
+            document.body.style.backgroundColor = isBlack ? 'black' : 'white';
+            switchButton.className = isBlack ? 'fa-solid fa-toggle-on' : 'fa-solid fa-toggle-off';
+            switchButton.style.color = isBlack ? 'white' : 'black';
+        });
+    </script>
+</body>
+</html>
